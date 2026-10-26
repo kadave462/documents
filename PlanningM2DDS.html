@@ -1,0 +1,424 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<title>Planning M2 DDS 2026–2027</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,600;8..60,700&family=Public+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+/* Mise en page : une colonne de lecture ; les pastilles reprennent le code couleur du planning officiel */
+:root{
+  --bg:#f7f8f6; --surface:#ffffff; --fg:#1d2321; --muted:#5d6763; --line:#dde2df; --accent:#2f6b5a;
+  --c-fdsem:#f3e27a; --c-fmss:#a9d3e6; --c-fhes:#c9d7f0; --c-mds:#bcd69c; --c-sl:#f2c46e; --c-adx:#f1b6d8; --c-exam:#e7756a; --c-misc:#d9dedb;
+  --ink-on-swatch:#1d2321;
+  --display:"Source Serif 4", Georgia, "Times New Roman", serif;
+  --body:"Public Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --mono:"IBM Plex Mono", ui-monospace, Menlo, Consolas, monospace;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#141917; --surface:#1c2220; --fg:#e6ebe8; --muted:#9aa5a0; --line:#2e3633; --accent:#7cc4ad;
+  --c-fdsem:#8a7a22; --c-fmss:#2f6680; --c-fhes:#3d4f7a; --c-mds:#4f6b33; --c-sl:#8d6420; --c-adx:#7e3e63; --c-exam:#9c3b33; --c-misc:#3a4340;
+  --ink-on-swatch:#f2f5f3; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#141917; --surface:#1c2220; --fg:#e6ebe8; --muted:#9aa5a0; --line:#2e3633; --accent:#7cc4ad;
+  --c-fdsem:#8a7a22; --c-fmss:#2f6680; --c-fhes:#3d4f7a; --c-mds:#4f6b33; --c-sl:#8d6420; --c-adx:#7e3e63; --c-exam:#9c3b33; --c-misc:#3a4340;
+  --ink-on-swatch:#f2f5f3; color-scheme:dark}
+
+body{background:var(--bg);color:var(--fg);font-family:var(--body);font-size:15px;line-height:1.55}
+.wrap{max-width:900px;margin:0 auto;padding-block:32px 64px;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));display:flex;flex-direction:column;gap:44px}
+h1,h2,h3{font-family:var(--display);text-wrap:balance;margin:0;line-height:1.2}
+h1{font-size:2.1rem}
+h2{font-size:1.45rem;padding-bottom:8px;border-bottom:1px solid var(--line)}
+h3{font-size:1.08rem}
+p{margin:0;max-width:68ch}
+.eyebrow{font-size:.75rem;text-transform:uppercase;letter-spacing:.09em;color:var(--muted);font-weight:600}
+section{display:flex;flex-direction:column;gap:16px}
+.muted{color:var(--muted)}
+.mono{font-family:var(--mono);font-variant-numeric:tabular-nums}
+
+header{display:flex;flex-direction:column;gap:10px}
+.facts{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px;margin-top:6px}
+.fact{background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:12px 14px;display:flex;flex-direction:column;gap:2px;min-width:0}
+.fact b{font-size:1rem}
+
+.filters{background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:14px 16px;display:flex;flex-wrap:wrap;gap:14px 28px}
+.filters fieldset{border:0;margin:0;padding:0;display:flex;flex-direction:column;gap:6px;min-width:0}
+.filters legend{padding:0;margin-bottom:6px}
+.seg{display:flex;flex-wrap:wrap;gap:6px}
+.seg input{position:absolute;opacity:0;pointer-events:none}
+.seg label{border:1px solid var(--line);border-radius:999px;padding:4px 12px;font-size:.85rem;cursor:pointer;background:var(--bg)}
+.seg input:checked+label{background:var(--accent);border-color:var(--accent);color:var(--bg);font-weight:600}
+.seg input:focus-visible+label{outline:2px solid var(--accent);outline-offset:2px}
+
+.today{background:var(--surface);border:1px solid var(--line);border-left:4px solid var(--accent);border-radius:8px;padding:14px 16px;display:flex;flex-direction:column;gap:6px}
+
+.courses{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:14px}
+.course{background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:14px 16px;display:flex;flex-direction:column;gap:8px;min-width:0}
+.course .top{display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.chip{display:inline-block;font-family:var(--mono);font-style:normal;font-size:.72rem;font-weight:500;padding:2px 7px;border-radius:4px;background:var(--sw,var(--c-misc));color:var(--ink-on-swatch);white-space:nowrap}
+.course dl{display:grid;grid-template-columns:auto 1fr;gap:3px 10px;margin:0;font-size:.88rem}
+.course dt{color:var(--muted)}
+.course dd{margin:0}
+
+.tablewrap{overflow-x:auto;border:1px solid var(--line);border-radius:8px;background:var(--surface)}
+table{border-collapse:collapse;width:100%;font-size:.88rem;min-width:640px}
+th,td{text-align:left;padding:8px 10px;border-bottom:1px solid var(--line);vertical-align:top}
+th{font-size:.72rem;text-transform:uppercase;letter-spacing:.07em;color:var(--muted);font-weight:600;background:var(--bg)}
+td.date{white-space:nowrap;font-family:var(--mono);font-variant-numeric:tabular-nums}
+td.time{white-space:nowrap;font-family:var(--mono);color:var(--muted)}
+tr.divider td{background:var(--bg);font-weight:600;color:var(--muted);font-size:.8rem;text-transform:uppercase;letter-spacing:.06em}
+tr.past td{color:var(--muted)}
+tr.past .chip{opacity:.55}
+tr.now td{background:color-mix(in srgb,var(--accent) 12%,transparent)}
+.tag{font-size:.72rem;font-weight:600;color:var(--accent);margin-left:6px;white-space:nowrap}
+.note{font-size:.8rem;color:var(--muted)}
+
+.legend{display:flex;flex-wrap:wrap;gap:8px 14px;font-size:.82rem}
+.legend span{display:flex;align-items:center;gap:6px}
+
+.keydates{display:flex;flex-direction:column;border:1px solid var(--line);border-radius:8px;background:var(--surface)}
+.kd{display:grid;grid-template-columns:170px 1fr;gap:12px;padding:10px 14px;border-bottom:1px solid var(--line)}
+.kd:last-child{border-bottom:0}
+@media (max-width:520px){.kd{grid-template-columns:1fr;gap:2px}}
+
+.people{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:4px 20px;font-size:.88rem}
+.people div{display:flex;gap:10px;padding:5px 0;border-bottom:1px dashed var(--line)}
+.people .mono{min-width:38px;color:var(--accent)}
+
+ul{margin:0;padding-left:20px;display:flex;flex-direction:column;gap:4px;max-width:70ch}
+.copy{font:inherit;font-size:.78rem;border:1px solid var(--line);background:var(--bg);color:var(--fg);border-radius:5px;padding:2px 8px;cursor:pointer;margin-left:6px}
+.copy:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+</style>
+
+<div class="wrap">
+
+<header>
+  <span class="eyebrow">Université de Montpellier · 2026–2027</span>
+  <h1>Master 2 Didactique des Sciences</h1>
+  <p class="muted">Le planning de l'année en une page : les cours, le calendrier complet du semestre 1, les dates clés, le semestre 2 et la liste des intervenants. Établi d'après le planning officiel, version du 23 octobre 2026.</p>
+  <div class="facts">
+    <div class="fact"><span class="eyebrow">Semestre 1</span><b>1er septembre → 14 janvier</b><span class="muted">jury le 14/01 au matin</span></div>
+    <div class="fact"><span class="eyebrow">Semestre 2</span><b>27 janvier → 2 juin</b><span class="muted">tous les mercredis</span></div>
+    <div class="fact"><span class="eyebrow">Connexion visio</span><b class="mono">N° 95500681302</b><span>clé <span class="mono" id="vkey">HN8f3H</span><button class="copy" id="copyBtn" type="button">Copier</button></span></div>
+  </div>
+</header>
+
+<div class="filters" role="group" aria-label="Choix des options">
+  <fieldset>
+    <legend class="eyebrow">Option du bloc 1</legend>
+    <div class="seg">
+      <input type="radio" name="b1" id="b1-all" value="all" checked><label for="b1-all">Les deux</label>
+      <input type="radio" name="b1" id="b1-fmss" value="FMSS"><label for="b1-fmss">Médiation</label>
+      <input type="radio" name="b1" id="b1-fhes" value="FHES"><label for="b1-fhes">Histoire et épistémologie</label>
+    </div>
+  </fieldset>
+  <fieldset>
+    <legend class="eyebrow">Option du bloc 3</legend>
+    <div class="seg">
+      <input type="radio" name="b3" id="b3-all" value="all" checked><label for="b3-all">Les deux</label>
+      <input type="radio" name="b3" id="b3-adse" value="ADSE"><label for="b3-adse">Sciences expérimentales</label>
+      <input type="radio" name="b3" id="b3-admi" value="ADMI"><label for="b3-admi">Maths et informatique</label>
+    </div>
+  </fieldset>
+  <p class="note" style="flex-basis:100%">Choisissez vos options pour n'afficher que vos cours. Le choix est mémorisé sur cet appareil.</p>
+</div>
+
+<div class="today" id="todayBox"></div>
+
+<section>
+  <h2>Mise à jour du 23 octobre</h2>
+  <ul>
+    <li><strong>Méthodologie : nouveaux intervenants.</strong> Séances 1, 3, 4 et 5 : Valérie Munier. Séances 2, 6, 7 et 10 : Aurélie Zwang. Séances 8 et 9 : David Cross.</li>
+    <li><strong>Séminaire de lecture : plus de séances communes avec Lyon.</strong> Chaque date comporte deux créneaux de 2 h (13h45–15h45 et 16h–18h), chacun avec un intervenant.</li>
+    <li><strong>Mercredi 13/01 :</strong> le séminaire de lecture (13h45–18h) et la Méthodologie 10 (14h–17h) figurent sur le même après-midi. À confirmer auprès du secrétariat.</li>
+    <li><strong>Semestre 2 :</strong> les intervenants de Méthodologie sont indiqués. Plus de séminaire étudiant le 7/04, un séminaire ajouté le 2/06.</li>
+    <li>Sans changement : fondamentaux, médiation, histoire et épistémologie, approfondissements, examens et dates de rendu.</li>
+  </ul>
+</section>
+
+<section>
+  <h2>Les cours du semestre 1</h2>
+  <p class="muted">30 ECTS répartis en trois blocs. Dans les blocs 1 et 3, chaque étudiant choisit une option sur deux.</p>
+  <div class="courses">
+    <article class="course">
+      <div class="top"><span class="chip" style="--sw:var(--c-fdsem)">FDSEM</span><span class="eyebrow">Bloc 1 · 6 ECTS · obligatoire</span></div>
+      <h3>Fondamentaux en didactique des sciences expérimentales et des mathématiques</h3>
+      <p>Le cours de base : les grands cadres théoriques et concepts de la didactique des sciences et des mathématiques.</p>
+      <dl><dt>Responsables</dt><dd>Joris Mithalal, Aurélie Chesnais</dd><dt>Format</dt><dd>13 séances (15 h CM + 24 h TD), le mercredi</dd><dt>Lieu</dt><dd>Fac d'Éducation</dd><dt>Évaluation</dt><dd>Examen écrit, mardi 17/11, 14h–17h</dd></dl>
+    </article>
+    <article class="course">
+      <div class="top"><span class="chip" style="--sw:var(--c-fmss)">FMSS</span><span class="eyebrow">Bloc 1 · 6 ECTS · au choix</span></div>
+      <h3>Fondamentaux en médiation des sciences et sociétés</h3>
+      <p>La diffusion des sciences auprès du public : musées, médiation, rapports entre sciences et société.</p>
+      <dl><dt>Responsables</dt><dd>Olivier Morin, Muriel Guedj</dd><dt>Format</dt><dd>13 séances (15 h CM + 24 h TD), le mardi après-midi + 2 journées pendant la session de Toussaint</dd><dt>Lieu</dt><dd>Fac d'Éducation</dd><dt>Évaluation</dt><dd>Dossier à rendre le lundi 4/01/2027</dd></dl>
+    </article>
+    <article class="course">
+      <div class="top"><span class="chip" style="--sw:var(--c-fhes)">FHES</span><span class="eyebrow">Bloc 1 · 6 ECTS · au choix</span></div>
+      <h3>Fondamentaux en histoire et épistémologie des sciences</h3>
+      <p>L'histoire des sciences et la réflexion sur la nature des savoirs scientifiques. Même créneau que la médiation.</p>
+      <dl><dt>Responsables</dt><dd>Hugues Chabot, Muriel Guedj</dd><dt>Format</dt><dd>13 séances (15 h CM + 24 h TD), le mardi après-midi + 3 séances pendant la session de Toussaint</dd><dt>Lieu</dt><dd>Fac de Sciences</dd><dt>Évaluation</dt><dd>Examen le mardi 5/01/2027 après-midi</dd></dl>
+    </article>
+    <article class="course">
+      <div class="top"><span class="chip" style="--sw:var(--c-mds)">MDS</span><span class="eyebrow">Bloc 2 · 6 ECTS · obligatoire</span></div>
+      <h3>Méthodologie</h3>
+      <p>Méthodologie de la recherche : construire une question, recueillir et analyser des données. Se poursuit au semestre 2.</p>
+      <dl><dt>Responsables</dt><dd>Virginie Deloustal-Jorrand, Valérie Munier</dd><dt>Format</dt><dd>10 séances (30 h TD)</dd><dt>Lieu</dt><dd>Fac d'Éducation</dd><dt>Évaluation</dt><dd>Dossier à rendre le lundi 4/01/2027</dd></dl>
+    </article>
+    <article class="course">
+      <div class="top"><span class="chip" style="--sw:var(--c-misc)">LVE</span><span class="eyebrow">Bloc 2 · 3 ECTS</span></div>
+      <h3>Langue vivante étrangère</h3>
+      <p>Inscrite au semestre 1 mais proposée indépendamment sur chaque site. À Montpellier : anglais avec Ruth Pevsner, le mercredi après-midi au semestre 2.</p>
+      <dl><dt>Lieu</dt><dd>Fac de Sciences</dd></dl>
+    </article>
+    <article class="course">
+      <div class="top"><span class="chip" style="--sw:var(--c-sl)">SL</span><span class="eyebrow">Bloc 3 · 3 ECTS · obligatoire</span></div>
+      <h3>Séminaire de lecture</h3>
+      <p>Lecture et discussion d'articles de recherche. Chaque date comporte deux créneaux de 2 h (13h45–15h45 et 16h–18h), chacun animé par un intervenant.</p>
+      <dl><dt>Responsables</dt><dd>Karine Bécu-Robinault, David Cross</dd><dt>Format</dt><dd>8 séances (16 h TD) + une séance 0 de présentation</dd><dt>Lieu</dt><dd>Fac d'Éducation</dd></dl>
+    </article>
+    <article class="course">
+      <div class="top"><span class="chip" style="--sw:var(--c-adx)">ADSE</span><span class="eyebrow">Bloc 3 · 6 ECTS · au choix</span></div>
+      <h3>Approfondissement en didactique des sciences expérimentales</h3>
+      <p>Approfondissement en didactique de la physique, de la chimie et des sciences de la vie. Tous les mercredis du 4/11 au 16/12.</p>
+      <dl><dt>Responsables</dt><dd>Karine Bécu-Robinault, Catherine Bruguière, David Cross, Aurélie Zwang</dd><dt>Format</dt><dd>10 séances (30 h TD)</dd><dt>Lieu</dt><dd>Fac d'Éducation</dd><dt>Évaluation</dt><dd>Dossier à rendre le lundi 4/01/2027</dd></dl>
+    </article>
+    <article class="course">
+      <div class="top"><span class="chip" style="--sw:var(--c-adx)">ADMI</span><span class="eyebrow">Bloc 3 · 6 ECTS · au choix</span></div>
+      <h3>Approfondissement en didactique des mathématiques et de l'informatique</h3>
+      <p>Approfondissement en didactique des mathématiques et de l'informatique. Même créneau que l'option sciences expérimentales.</p>
+      <dl><dt>Responsables</dt><dd>Sonia Yvain-Prébiski, Simon Modeste</dd><dt>Format</dt><dd>10 séances (30 h TD)</dd><dt>Lieu</dt><dd>Fac de Sciences</dd><dt>Évaluation</dt><dd>Dossier à rendre le lundi 4/01/2027</dd></dl>
+    </article>
+  </div>
+</section>
+
+<section>
+  <h2>Calendrier du semestre 1</h2>
+  <div class="legend">
+    <span><i class="chip" style="--sw:var(--c-fdsem)">FDSEM</i> Fondamentaux en didactique</span>
+    <span><i class="chip" style="--sw:var(--c-fmss)">FMSS</i> Médiation</span>
+    <span><i class="chip" style="--sw:var(--c-fhes)">FHES</i> Histoire et épistémologie</span>
+    <span><i class="chip" style="--sw:var(--c-mds)">MDS</i> Méthodologie</span>
+    <span><i class="chip" style="--sw:var(--c-sl)">SL</i> Séminaire de lecture</span>
+    <span><i class="chip" style="--sw:var(--c-adx)">ADSE / ADMI</i> Approfondissements</span>
+  </div>
+  <div class="tablewrap"><table>
+    <thead><tr><th>Date</th><th>Horaire</th><th>Cours</th><th>Séance</th><th>Intervenant·e</th></tr></thead>
+    <tbody id="s1"></tbody>
+  </table></div>
+  <p class="note">Intervenants tels qu'indiqués sur le planning du 23 octobre ; ils peuvent encore changer. Pour les approfondissements, le planning donne deux initiales par créneau sous l'intitulé « ADSE/ADMI » (par ex. « OM/SYP ») : la première est attribuée ici à l'option sciences expérimentales et la seconde à l'option maths et informatique. Coquilles du planning corrigées : « Mercredi 30/10 » correspond au 30/09, et l'examen FDSEM « 17/11/2027 » a lieu en 2026.</p>
+</section>
+
+<section>
+  <h2>Dates clés</h2>
+  <div class="keydates">
+    <div class="kd"><b class="mono">19 → 23 oct.</b><span>Session intensive de Toussaint</span></div>
+    <div class="kd"><b class="mono">24 oct. → 1er nov.</b><span>Congés universitaires</span></div>
+    <div class="kd"><b class="mono">Mer. 11 nov.</b><span>Férié</span></div>
+    <div class="kd"><b class="mono">Mar. 17 nov.</b><span><strong>Examen</strong> Fondamentaux en didactique, 14h–17h</span></div>
+    <div class="kd"><b class="mono">19 déc. → 3 janv.</b><span>Congés universitaires</span></div>
+    <div class="kd"><b class="mono">Lun. 4 janv. 2027</b><span><strong>Rendu des dossiers</strong> : Méthodologie, Médiation, approfondissements (ADSE et ADMI)</span></div>
+    <div class="kd"><b class="mono">Mar. 5 janv. 2027</b><span><strong>Examen</strong> Histoire et épistémologie, après-midi</span></div>
+    <div class="kd"><b class="mono">Jeu. 14 janv. 2027</b><span>Jury du semestre 1, le matin</span></div>
+    <div class="kd"><b class="mono">Mer. 27 janv. 2027</b><span>Début du semestre 2</span></div>
+    <div class="kd"><b class="mono">Mer. 2 juin 2027</b><span>Dernier séminaire étudiant</span></div>
+  </div>
+</section>
+
+<section>
+  <h2>Semestre 2</h2>
+  <p class="muted">Tout a lieu le mercredi. Pas d'option, sauf le stage.</p>
+  <div class="courses">
+    <article class="course">
+      <div class="top"><span class="chip" style="--sw:var(--c-misc)">SMR</span><span class="eyebrow">Bloc 1 · 21 ECTS</span></div>
+      <h3>Séminaire et mémoire de recherche</h3>
+      <p>Le mémoire de recherche, cœur du semestre. Séminaires étudiants le mercredi de 9h à 12h : 17, 24 et 31/03, 21 et 28/04, 5, 12, 19 et 26/05, 2/06.</p>
+      <dl><dt>Responsables</dt><dd>Karine Bécu-Robinault, Olivier Morin et Pauline Hellio / David Cross et Simon Modeste</dd><dt>Lieu</dt><dd>Fac de Sciences</dd></dl>
+    </article>
+    <article class="course">
+      <div class="top"><span class="chip" style="--sw:var(--c-mds)">MDS2</span><span class="eyebrow">Bloc 2 · 3 ECTS</span></div>
+      <h3>Méthodologie de la recherche 2</h3>
+      <dl><dt>Responsables</dt><dd>Virginie Deloustal-Jorrand, Valérie Munier</dd><dt>Séances</dt><dd>5 mercredis, 9h–12h : 3/02 et 10/02 (David Cross), 24/02 et 3/03 (Valérie Munier), 10/03 (Maëlis Béjeaud)</dd><dt>Lieu</dt><dd>Fac d'Éducation</dd></dl>
+    </article>
+    <article class="course">
+      <div class="top"><span class="chip" style="--sw:var(--c-adx)">PEDVS</span><span class="eyebrow">Bloc 2 · 3 ECTS</span></div>
+      <h3>Projet en enseignement, diffusion et valorisation des sciences</h3>
+      <dl><dt>Responsables</dt><dd>Séverine Derolez, Nicolas Saby</dd><dt>Séances</dt><dd>Le mercredi 16h45–18h15, du 3/02 au 31/03, avec Nicolas Saby</dd><dt>Lieu</dt><dd>Fac de Sciences</dd></dl>
+    </article>
+    <article class="course">
+      <div class="top"><span class="chip" style="--sw:var(--c-fmss)">LVE</span><span class="eyebrow">3 ECTS</span></div>
+      <h3>Anglais</h3>
+      <dl><dt>Intervenante</dt><dd>Ruth Pevsner</dd><dt>Séances</dt><dd>Le mercredi 13h15–16h30, du 3/02 au 31/03</dd></dl>
+    </article>
+    <article class="course">
+      <div class="top"><span class="chip" style="--sw:var(--c-misc)">OUV</span><span class="eyebrow">Bloc 2 · 3 ECTS</span></div>
+      <h3>Ouverture</h3>
+      <dl><dt>Responsables</dt><dd>Pauline Hellio, Nicolas Saby</dd></dl>
+    </article>
+    <article class="course">
+      <div class="top"><span class="chip" style="--sw:var(--c-misc)">Stage</span><span class="eyebrow">En option</span></div>
+      <h3>Stage</h3>
+      <dl><dt>Responsables</dt><dd>Karine Bécu-Robinault, Pauline Hellio, Nicolas Saby</dd></dl>
+    </article>
+  </div>
+</section>
+
+<section>
+  <h2>Intervenant·es</h2>
+  <p class="muted">Les initiales utilisées sur le planning.</p>
+  <div class="people" id="people"></div>
+</section>
+
+</div>
+
+<script>
+const C={FDSEM:"var(--c-fdsem)",FMSS:"var(--c-fmss)",FHES:"var(--c-fhes)",MDS:"var(--c-mds)",SL:"var(--c-sl)",ADSE:"var(--c-adx)",ADMI:"var(--c-adx)",EXAM:"var(--c-exam)",X:"var(--c-misc)"};
+const N={FDSEM:"Fondamentaux en didactique",FMSS:"Médiation",FHES:"Histoire et épistémologie",MDS:"Méthodologie",SL:"Séminaire de lecture",ADSE:"Approf. sciences expérimentales",ADMI:"Approf. maths et informatique",EXAM:"Examen",X:""};
+// [date iso, horaire, code, séance, intervenant, note]
+const S=[
+["2026-09-01","14h–17h","X","Réunion de rentrée","",""],
+["2026-09-02","9h30–12h30","FDSEM","1","Karine Bécu-Robinault",""],
+["2026-09-02","13h30–16h30","FDSEM","2","Aurélie Chesnais",""],
+["2026-09-08","14h–17h","FMSS","1","Olivier Morin",""],
+["2026-09-08","14h–17h","FHES","1","Muriel Guedj",""],
+["2026-09-09","9h30–12h30","FDSEM","3","Karine Bécu-Robinault",""],
+["2026-09-09","13h30–16h30","FDSEM","4","Floriane Wozniak",""],
+["2026-09-15","14h–17h","FMSS","2","Muriel Guedj",""],
+["2026-09-15","14h–17h","FHES","2","Manuel Bächtold",""],
+["2026-09-16","9h30–12h30","FDSEM","5","Joris Mithalal",""],
+["2026-09-16","13h30–16h30","FDSEM","6","Aurélie Chesnais",""],
+["2026-09-22","14h–17h","FMSS","3","Muriel Guedj",""],
+["2026-09-22","14h–17h","FHES","3","Cyril Langlois",""],
+["2026-09-23","9h30–12h30","FDSEM","7","François Lê",""],
+["2026-09-23","13h30–16h30","MDS","1","Valérie Munier",""],
+["2026-09-23","16h45–18h","SL","0 (Lyon)","Karine Bécu-Robinault et Virginie Deloustal-Jorrand","barrée sur le planning"],
+["2026-09-29","14h–17h","FMSS","4","François Dessart",""],
+["2026-09-29","14h–17h","FHES","4","Muriel Guedj",""],
+["2026-09-30","9h30–12h30","FDSEM","8","Aurélie Chesnais",""],
+["2026-09-30","13h30–16h30","FDSEM","9","François Lê",""],
+["2026-10-06","14h–17h","FMSS","5","Séverine Derolez",""],
+["2026-10-06","14h–17h","FHES","5","Manuel Bächtold",""],
+["2026-10-07","9h30–12h30","FDSEM","10","Joris Mithalal",""],
+["2026-10-07","13h30–16h30","MDS","2","Aurélie Zwang",""],
+["2026-10-07","16h45–18h","SL","0 (Montpellier)","David Cross",""],
+["2026-10-13","14h–17h","FMSS","6","Olivier Morin",""],
+["2026-10-13","14h–17h","FHES","6","Muriel Guedj",""],
+["2026-10-14","9h30–12h30","FDSEM","11","Valérie Munier",""],
+["2026-10-14","13h30–16h30","MDS","3","Valérie Munier",""],
+["div","Session intensive de Toussaint"],
+["2026-10-19","Journée","FMSS","7 et 8","Olivier Morin",""],
+["2026-10-19","14h–17h","FHES","7","Hugues Chabot",""],
+["2026-10-20","Journée","FMSS","9 et 10","Séverine Derolez",""],
+["2026-10-20","9h30–12h30","FHES","8","François Lê",""],
+["2026-10-20","14h–17h","FHES","9","Daniële Vial",""],
+["2026-10-21","9h30–12h30","MDS","4","Valérie Munier",""],
+["2026-10-21","14h–17h","FDSEM","12","David Cross",""],
+["2026-10-22","9h30–12h30","MDS","5","Valérie Munier",""],
+["2026-10-22","14h–17h","FDSEM","13 (dernière)","Floriane Wozniak",""],
+["2026-10-23","9h30–12h30","MDS","6","Aurélie Zwang",""],
+["2026-10-23","14h–17h","MDS","7","Aurélie Zwang",""],
+["div","Congés du 24/10 au 1/11"],
+["2026-11-03","13h45–15h45","SL","1","David Cross",""],
+["2026-11-03","16h–18h","SL","2","Karine Bécu-Robinault",""],
+["2026-11-04","9h–12h","ADSE","1","Olivier Morin",""],
+["2026-11-04","9h–12h","ADMI","1","Sonia Yvain-Prébiski",""],
+["2026-11-04","13h15–16h15","ADSE","2","Aurélie Zwang",""],
+["2026-11-04","13h15–16h15","ADMI","2","Simon Modeste",""],
+["2026-11-10","14h–17h","FMSS","11","François Dessart",""],
+["2026-11-10","14h–17h","FHES","10","Manuel Bächtold",""],
+["2026-11-11","—","X","Férié","",""],
+["2026-11-17","14h–17h","EXAM","Fondamentaux en didactique","","examen écrit"],
+["2026-11-18","9h–12h","ADSE","3","Karine Bécu-Robinault",""],
+["2026-11-18","9h–12h","ADMI","3","Floriane Wozniak",""],
+["2026-11-18","13h15–16h15","ADSE","4","Manuel Bächtold",""],
+["2026-11-18","13h15–16h15","ADMI","4","Virginie Deloustal-Jorrand",""],
+["2026-11-24","14h–17h","FMSS","12","Simon Modeste",""],
+["2026-11-24","14h–17h","FHES","11","François Lê",""],
+["2026-11-25","9h–12h","ADSE","5","David Cross",""],
+["2026-11-25","9h–12h","ADMI","5","Joris Mithalal",""],
+["2026-11-25","13h45–15h45","SL","3","Aurélie Chesnais",""],
+["2026-11-25","16h–18h","SL","4","Manuel Bächtold",""],
+["2026-12-01","14h–17h","FMSS","13 (dernière)","Muriel Guedj",""],
+["2026-12-01","14h–17h","FHES","12","Muriel Guedj",""],
+["2026-12-02","9h–12h","ADSE","6","François Dessart",""],
+["2026-12-02","9h–12h","ADMI","6","Céline Constantin",""],
+["2026-12-02","13h15–16h15","ADSE","7","Karine Bécu-Robinault",""],
+["2026-12-02","13h15–16h15","ADMI","7","Aurélie Chesnais",""],
+["2026-12-08","14h–17h","FHES","13 (dernière)","Hugues Chabot",""],
+["2026-12-09","9h–12h","ADSE","8","Olivier Morin",""],
+["2026-12-09","9h–12h","ADMI","8","Joris Mithalal",""],
+["2026-12-09","13h45–15h45","SL","5","Valérie Munier",""],
+["2026-12-09","16h–18h","SL","6","AMR","initiales absentes de la liste"],
+["2026-12-15","14h–17h","MDS","8","David Cross",""],
+["2026-12-16","9h–12h","ADSE","9","David Cross",""],
+["2026-12-16","9h–12h","ADMI","9","Céline Constantin",""],
+["2026-12-16","13h15–16h15","ADSE","10 (dernière)","Valérie Munier",""],
+["2026-12-16","13h15–16h15","ADMI","10 (dernière)","Sonia Yvain-Prébiski",""],
+["div","Congés du 19/12 au 3/01"],
+["2027-01-04","—","EXAM","Rendu des dossiers","","Méthodologie, Médiation, ADSE, ADMI"],
+["2027-01-05","Après-midi","EXAM","Histoire et épistémologie","","examen",["FHES"]],
+["2027-01-06","9h–12h","MDS","9","David Cross",""],
+["2027-01-13","13h45–15h45","SL","7","Eleda Robo",""],
+["2027-01-13","14h–17h","MDS","10 (dernière)","Aurélie Zwang","même après-midi que le séminaire"],
+["2027-01-13","16h–18h","SL","8","Aurélie Zwang",""],
+["2027-01-14","Matin","X","Jury","",""]
+];
+const JOURS=["Dim.","Lun.","Mar.","Mer.","Jeu.","Ven.","Sam."];
+const dayLabel=iso=>{const [y,m,d]=iso.split("-").map(Number);const dt=new Date(y,m-1,d);return JOURS[dt.getDay()]+" "+d+"/"+String(m).padStart(2,"0");};
+const pad=n=>String(n).padStart(2,"0");
+const now=new Date();const today=now.getFullYear()+"-"+pad(now.getMonth()+1)+"-"+pad(now.getDate());
+const esc=s=>String(s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+
+let b1="all",b3="all";
+try{b1=localStorage.getItem("b1")||"all";b3=localStorage.getItem("b3")||"all";}catch(_){}
+const setRadio=(name,v)=>{const el=document.querySelector(`input[name="${name}"][value="${v}"]`);if(el)el.checked=true;};
+setRadio("b1",b1);setRadio("b3",b3);
+
+function visible(r){
+  const code=r[2];
+  if(r[6]&&b1!=="all"&&!r[6].includes(b1))return false;
+  if((code==="FMSS"||code==="FHES")&&b1!=="all"&&code!==b1)return false;
+  if((code==="ADSE"||code==="ADMI")&&b3!=="all"&&code!==b3)return false;
+  return true;
+}
+const courseLabel=r=>r[2]==="X"||r[2]==="EXAM"?esc(r[3]):esc(N[r[2]])+" "+esc(r[3]);
+
+function render(){
+  let html="",last="";
+  for(const r of S){
+    if(r[0]==="div"){html+=`<tr class="divider"><td colspan="5">${esc(r[1])}</td></tr>`;last="";continue;}
+    if(!visible(r))continue;
+    const [iso,time,code,sess,teach,note]=r;
+    const cls=iso<today?"past":iso===today?"now":"";
+    const first=iso!==last;last=iso;
+    const chip=code==="X"?"":`<span class="chip" style="--sw:${C[code]}">${code==="EXAM"?"!":code}</span> `;
+    const name=code==="X"||code==="EXAM"?"":esc(N[code]);
+    const tag=first&&iso===today?'<span class="tag">AUJOURD\'HUI</span>':"";
+    html+=`<tr class="${cls}"><td class="date">${first?dayLabel(iso):""}${tag}</td><td class="time">${esc(time)}</td><td>${chip}${name}</td><td>${code==="EXAM"?"<strong>"+esc(sess)+"</strong>":esc(sess)}${note?` <span class="note">· ${esc(note)}</span>`:""}</td><td>${esc(teach)}</td></tr>`;
+  }
+  document.getElementById("s1").innerHTML=html;
+
+  const rows=S.filter(r=>r[0]!=="div"&&visible(r));
+  const todays=rows.filter(r=>r[0]===today);
+  const next=rows.find(r=>r[0]>today);
+  const fmt=r=>`${esc(r[1])} · ${courseLabel(r)}${r[4]?" · "+esc(r[4]):""}`;
+  let b='<span class="eyebrow">Repère</span>';
+  if(todays.length)b+=`<b>Aujourd'hui</b><ul>${todays.map(r=>`<li>${fmt(r)}</li>`).join("")}</ul>`;
+  if(next){const nd=rows.filter(r=>r[0]===next[0]);b+=`<b>Prochain jour de cours : ${dayLabel(next[0])}</b><ul>${nd.map(r=>`<li>${fmt(r)}</li>`).join("")}</ul>`;}
+  if(!todays.length&&!next)b+="<b>Le semestre 1 est terminé.</b> Le semestre 2 commence le mercredi 27 janvier 2027.";
+  document.getElementById("todayBox").innerHTML=b;
+}
+document.querySelectorAll('input[name="b1"],input[name="b3"]').forEach(el=>el.addEventListener("change",e=>{
+  if(e.target.name==="b1")b1=e.target.value;else b3=e.target.value;
+  try{localStorage.setItem(e.target.name,e.target.value);}catch(_){}
+  render();
+}));
+render();
+
+const P=[["AC","Aurélie Chesnais","Montpellier"],["AZ","Aurélie Zwang","Montpellier"],["CC","Céline Constantin","Montpellier"],["CL","Cyril Langlois","Lyon"],["CLa","Catherine Lattard","Lyon"],["DC","David Cross","Montpellier"],["DV","Daniële Vial","Lyon"],["FD","François Dessart","Lyon"],["FL / FLH","François Lê","Lyon"],["FW","Floriane Wozniak","Lyon"],["HC","Hugues Chabot","Lyon"],["JM","Joris Mithalal","Lyon"],["KBR / KB","Karine Bécu-Robinault","Lyon"],["LS","Léna Somano","Lyon"],["MB","Manuel Bächtold","Montpellier"],["MG","Muriel Guedj","Montpellier"],["OM","Olivier Morin","Lyon"],["PH","Pauline Hellio","Lyon"],["SD","Séverine Derolez","Lyon"],["SM","Simon Modeste","Montpellier"],["SYP","Sonia Yvain-Prébiski","Lyon"],["VDJ","Virginie Deloustal-Jorrand","Lyon"],["VM","Valérie Munier","Montpellier"],["ER","Eleda Robo","séminaire de lecture"],["AMR","non précisé","séminaire de lecture du 9/12"],["—","Catherine Bruguière","approfondissement sciences expérimentales"],["—","Maëlis Béjeaud","Méthodologie 2"],["—","Nicolas Saby","PEDVS, ouverture, stage"],["—","Ruth Pevsner","anglais"]];
+document.getElementById("people").innerHTML=P.map(p=>`<div><span class="mono">${esc(p[0])}</span><span><b>${esc(p[1])}</b> <span class="muted">· ${esc(p[2])}</span></span></div>`).join("");
+
+document.getElementById("copyBtn").addEventListener("click",async e=>{
+  const t="N° 95500681302, clé HN8f3H";
+  try{await navigator.clipboard.writeText(t);e.target.textContent="Copié";}
+  catch(_){const r=document.createRange();r.selectNodeContents(document.getElementById("vkey"));const s=getSelection();s.removeAllRanges();s.addRange(r);}
+});
+</script>
+
+</body></html>
